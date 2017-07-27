@@ -35,7 +35,10 @@ public class RefreshLayout extends LinearLayout {
         ProgressBar progressBar=new ProgressBar(getContext());
         addView(progressBar,0);
     }
-
-
-
+//通过scroll隐藏progerssbar
+    @Override
+    protected void onLayout(boolean changed, int l, int t, int r, int b) {
+        super.onLayout(changed, l, t, r, b);
+        scrollTo(0,getChildAt(0).getHeight());
+    }
 }
